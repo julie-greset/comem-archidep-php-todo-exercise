@@ -1,6 +1,6 @@
 <?php
 
-define('BASE_URL', '/');
+define('BASE_URL', '/comem-archidep-php-todo-exercise/');
 define('DB_USER', 'root');
 define('DB_PASS', 'root');
 define('DB_NAME', 'todolist');
