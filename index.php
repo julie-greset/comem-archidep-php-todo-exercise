@@ -38,7 +38,7 @@ if (isset($_POST['action'])) {
       $id = $_POST['id'];
       if(is_numeric($id)) {
         
-        $updateQuery = "UPDATE todo set done = if(done=1,0,1) where id =$id"; // IMPLEMENT ME
+        $updateQuery = "UPDATE todo set done = if(done=1,0,1) where id =$id";
         if(!$db->query($updateQuery)) {
           die(print_r($db->errorInfo(), true));
         }
@@ -55,7 +55,7 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if(is_numeric($id)) {
-        $deleteQuery = ''; // IMPLEMENT ME
+        $deleteQuery = "DELETE from todo WHERE id=$id";
         if(!$db->query($deleteQuery)) {
           die(print_r($db->errorInfo(), true));
         }
