@@ -37,10 +37,12 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if(is_numeric($id)) {
-        $updateQuery = 'UPDATE '; // IMPLEMENT ME
+        
+        $updateQuery = "UPDATE todo set done = if(done=1,0,1) where id =$id"; // IMPLEMENT ME
         if(!$db->query($updateQuery)) {
           die(print_r($db->errorInfo(), true));
         }
+        
       }
 
       header('Location: '.BASE_URL);
@@ -70,7 +72,7 @@ if (isset($_POST['action'])) {
 /**
  * Select all tasks from the database.
  */
-$selectQuery = 'SELECT * FROM todo'; // IMPLEMENT ME
+$selectQuery = 'SELECT * FROM todo ORDER BY created_at DESC'; 
 $items = $db->query($selectQuery);
 ?>
 
